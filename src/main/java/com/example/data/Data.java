@@ -1,10 +1,10 @@
-package com.example.passwords;
+package com.example.data;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "passwords")
-public class Password {
+public class Data {
   @Id
   private String id;
   private String name;

@@ -2,23 +2,26 @@ package com.example.passmanager;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.passwords.Password;
+import com.example.data.Data;
 
 @RestController
 public class MainController {
-  private Password pass = new Password();
-
   @Autowired
-  private UserRepository ur;
+  DataService dataService;
   
-  @GetMapping("/data")
-  public String showData() {
-    pass.setName("sssssss");
-    pass.setPassword("Sajied");
-
-    ur.save(pass);
-    return "Hello";
+  @PostMapping("/insert-data")
+  public void insert(@RequestBody Data data) {
+    dataService.createEntry(data);
   }
+
+  @GetMapping("/fetch-data")
+  public void fetch(@RequestParam String name) {
+    dataService.fetchEntry(name);
+  }
+
 }

@@ -2,6 +2,7 @@ package com.example.data;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.stereotype.Component;
 
 @Document(collection = "passwords")
 public class Data {

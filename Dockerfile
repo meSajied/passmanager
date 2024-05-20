@@ -8,7 +8,7 @@ WORKDIR /app
 COPY target/passmanager.jar /app/passmanager.jar
 
 # Expose the port the application runs on
-EXPOSE 8080
+EXPOSE 7777
 
 # Specify the command to run on container start, passing environment variables
 # Specify the command to run on container start, passing environment variables

@@ -1,0 +1,9 @@
+### hello
+POST localhost:7777/insert-data
+
+Content-Type: "application/json"
+
+{
+  name : "sajied",
+  password "hihi"
+}

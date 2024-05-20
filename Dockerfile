@@ -1,6 +1,6 @@
 # Use official OpenJDK image as a base image
 FROM maven:3.8.5-openjdk-17 as build
-copy ..
+copy . .
 
 run mvn clean package
 

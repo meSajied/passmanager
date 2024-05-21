@@ -10,10 +10,10 @@ COPY --from=build /target/passmanager.jar passmanager.jar
 # Set the working directory in the container
 WORKDIR /app
 
-COPY /passmanager.jar /app/passmanager.jar
+COPY /target/passmanager.jar /app/passmanager.jar
 
 # Expose the port the application runs on
 EXPOSE 7777
 
-ENTRYPOINT ["java", "-jar", "-Dspring.data.mongodb.uri=${DATABASE_URL}", "your-application.jar", "--spring.config.location=classpath:/application.yml"]
+ENTRYPOINT ["java", "-jar", "-Dspring.data.mongodb.uri=${DATABASE_URL}", "/app/passmanager.jar", "--spring.config.location=classpath:/application.yml"]
 

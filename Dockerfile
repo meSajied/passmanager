@@ -5,7 +5,7 @@ RUN mvn package -X
 
 FROM openjdk:17.0.1-jdk-slim
 
-COPY --from=build /target/passmanager.jar /app/passmanager.jar
+COPY --from=build /target/passmanager-1.0.jar /app/passmanager.jar
 
 # Set the working directory in the container
 WORKDIR /app

@@ -10,7 +10,7 @@ COPY --from=build /target/passmanager.jar passmanager.jar
 # Set the working directory in the container
 WORKDIR /app
 
-COPY /target/passmanager.jar /app/passmanager.jar
+COPY /passmanager.jar /app/passmanager.jar
 
 # Expose the port the application runs on
 EXPOSE 7777
